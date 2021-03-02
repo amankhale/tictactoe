@@ -1,0 +1,138 @@
+#game{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(131, 255, 131);
+
+    .game-content{
+        width: 500px;
+        height: 600px;
+        margin: 5% 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        background: white;
+        border-radius: 10px;
+
+        .game-display{
+            width: 100%;
+            height: 95%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+
+            h2{
+                font-size: 2.5rem;
+            }
+            .display-turn{
+                position: relative;
+                width: 300px;
+                height: 50px;
+                font-size: 1.3rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                .turn{
+                    z-index: 2;
+                    color: white;
+                    font-weight: 600;
+                    pointer-events: none;
+                }
+
+                .slider{
+                    position: absolute;
+                    left: 0;
+                    width: 150px;
+                    height: 100%;
+                    background:rgb(126, 145, 255);
+                    border-radius: 5px;
+                    transition: all 0.5s ease;
+                }
+                .slider.slide{
+                    left: 50%;
+                    background: rgb(255, 131, 131);
+                }
+            }
+            .game-board{
+                height: 350px;
+                width: 350px;
+                display: flex;
+                align-items: space-evenly;
+                justify-content: space-evenly;
+                flex-direction: column;
+                .row{
+                    height: 100px;
+                    display: flex;
+                    align-items: space-around;
+                    justify-content: space-evenly;
+    
+                    .cell{
+                        width: 100px;
+                        cursor: pointer;
+                        font-size: 4rem;
+                        font-weight: 600;
+                        border: none;
+                        outline: none;
+                        background: white;
+                        color: white;
+                        border: 2px solid rgb(128, 128, 255);
+                        border-radius: 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.2s ease;
+                    }
+                    .cell.o-turn{
+                        background: rgb(126, 145, 255);
+                        border: none;
+                    }
+                    .cell.x-turn{
+                        background: rgb(255, 131, 131);
+                        border: none;
+                    }
+                }
+            }
+
+        }
+        button:not(.cell){
+            width: 100%;
+            height: 40px;
+            font-size: 1.3rem;
+            border: none;
+            outline: none;
+            color: white;
+            border-radius: 5px;
+            background: rgb(126, 145, 255);
+            font-family: 'Poppins', sans-serif;
+        }
+    }
+}
+@media (max-width: 450px){
+    #game{
+        .game-content{
+            .game-display{
+                h2{
+                    font-size: 2rem;
+                }
+                .game-board{
+                    height: 300px;
+                    width: 300px;
+
+                        .row{
+                        height: 80px;
+                
+                        .cell{
+                            width: 80px;
+                            font-size: 2.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

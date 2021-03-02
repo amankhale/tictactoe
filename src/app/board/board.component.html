@@ -1,0 +1,30 @@
+<div id="game">
+    <div class="game-content">
+        <div class="game-display">
+            <h2>Tic Tac Toe</h2>
+            <div class="display-turn">
+                <span class="turn">x's Turn</span>
+                <span class="turn">o's Turn</span>
+                <span class="slider"></span>
+            </div>
+            <div class="game-board">
+                <div class="row">
+                    <button (click)="this.gameLogic.makeMove($event); displayResult()" position="0" class="cell"></button>
+                    <button (click)="this.gameLogic.makeMove($event); displayResult()" position="1" class="cell"></button>
+                    <button (click)="this.gameLogic.makeMove($event); displayResult()" position="2" class="cell"></button>
+                </div>
+                <div class="row">
+                    <button (click)="this.gameLogic.makeMove($event); displayResult()" position="3" class="cell"></button>
+                    <button (click)="this.gameLogic.makeMove($event); displayResult()" position="4" class="cell"></button>
+                    <button (click)="this.gameLogic.makeMove($event); displayResult()" position="5" class="cell"></button>
+                </div>
+                <div class="row">
+                    <button (click)="this.gameLogic.makeMove($event); displayResult()" position="6" class="cell"></button>
+                    <button (click)="this.gameLogic.makeMove($event); displayResult()" position="7" class="cell"></button>
+                    <button (click)="this.gameLogic.makeMove($event); displayResult()" position="8" class="cell"></button>
+                </div>
+                </div>
+        </div>
+        <button (click)="this.newGame()" mat-raised-button>Start New Game</button>
+    </div>
+</div>
